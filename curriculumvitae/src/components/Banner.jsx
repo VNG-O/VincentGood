@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Container, Grid, Typography, Button } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
+import { darkTheme } from '../theme';
+import { Box, Container, Grid, Typography, Button, makeStyles } from '@material-ui/core'
 import Headshot from '../assets/headshot.jpg'
 import PhoneIcon from '@material-ui/icons/Phone';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -32,9 +32,8 @@ const useStyles = makeStyles({
         paddingTop: "10%",
     },
     headshot: {
-        width: "100%",
+        width: "300px",
         borderRadius: "50%",
-        border: "2px solid #000",
     },
     socialButton: {
         padding: "0",
@@ -47,8 +46,9 @@ const useStyles = makeStyles({
         },
     },
     socialIcon: {
-        fontSize: 25,
+        fontSize: 40,
         padding: "0.5rem",
+        color: darkTheme.palette.primary.main,
     },
   });
 
@@ -60,12 +60,12 @@ const Banner = () => {
       }
 
     return (
-        // center align in mobile not wokring
-        <Box className={classes.root}>
+        // center align in mobile not wokring 
+        <Box className={classes.root} textAlign={{ xs: "center", md: "left" }}>
             <Container>
                 <Grid container justifyContent="center" alignItems="center">
 
-                    <Grid item container direction="column" sm={12} md={5}>
+                    <Grid item container direction="column" xs={12} md={5}>
 
                         <Grid item>
                             <Typography variant="h1">
@@ -79,10 +79,9 @@ const Banner = () => {
                             </Typography>
                         </Grid>
 
-                        <Grid item containter direction="column">
-
+                        <Grid containter direction="column">
                             {socials.map((item, index) => (
-                                <Grid item container key={index} alignItems="center">
+                                <Grid item container key={index} alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
                                     {<item.icon className={classes.socialIcon} />}
                                     <Typography variant="body1">
                                         {item.info}
@@ -90,18 +89,14 @@ const Banner = () => {
                                 </Grid>
                             ))}
 
-                            <Grid item>
-                                <Button className={classes.socialButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")}>
-                                    <LinkedInIcon className={classes.socialIcon} />
-                                </Button>
-                            </Grid>
-
                         </Grid>
 
-                    </Grid>
+                        <Grid item>
+                            <Button className={classes.socialButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")}>
+                                <LinkedInIcon className={classes.socialIcon} style={{ color: "#0a66c2" }}/>
+                            </Button>
+                        </Grid>
 
-                    <Grid item align="center" sm={12} md={4}>
-                        <img className={classes.headshot} src={Headshot} alt="headShot" />
                     </Grid>
 
                 </Grid>

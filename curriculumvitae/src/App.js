@@ -1,15 +1,16 @@
-import './App.css';
-import { ThemeProvider, Paper } from '@material-ui/core';
-import { theme } from './theme';
 import Banner from './components/Banner';
+import AboutMe from './components/AboutMe';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from '@material-ui/core';
+import { darkTheme } from './theme';
 
 function App() {
 
   return (
-    <ThemeProvider theme={theme}>
-      <Paper backgroundColor={theme.palette.primary} style={{ height:"100vh" }}>
-        <Banner />
-      </Paper>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Banner />
+      <AboutMe />
     </ThemeProvider>
   );
 }
