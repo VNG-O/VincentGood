@@ -1,5 +1,4 @@
-import { Box, Container, Grid, Typography, makeStyles } from '@material-ui/core'
-import Headshot from '../assets/headshot.jpg'
+import { Box, Container, Grid, Typography, makeStyles } from '@material-ui/core';
 
 const aboutTile = [
     {
@@ -12,28 +11,16 @@ const aboutTile = [
     },
   ]
 
-  const useStyles = makeStyles({
-    headshot: {
-        width: "100%",
-        borderRadius: "50%",
-    },
-  });
-
-const AboutMe = () => {
-    const classes = useStyles();
+const AboutMe = (props) => {
 
     return (
-        <Box textAlign="justify">
+        <Box className={props.className} textAlign="justify">
             <Container >
                 <Typography variant="h2" align="center" style={{ paddingBottom: "3rem"}}>
                     A little bit about me...
                 </Typography>
 
                 <Grid container justifyContent="center" spacing={10}>
-
-                    <Grid item align="center" md={4}>
-                        <img className={classes.headshot} src={Headshot} alt="headShot" />
-                    </Grid>
 
                     {aboutTile.map((item, index) => (
 

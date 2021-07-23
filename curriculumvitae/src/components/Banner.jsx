@@ -1,12 +1,13 @@
 import React from 'react'
 import { darkTheme } from '../theme';
-import { Box, Container, Grid, Typography, Button, makeStyles } from '@material-ui/core'
-// import Headshot from '../assets/headshot.jpg'
+import { Box, Grid, Typography, Button, makeStyles, IconButton, Link } from '@material-ui/core'
+import Headshot from '../assets/headshot.jpg'
 import PhoneIcon from '@material-ui/icons/Phone';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import CakeIcon from '@material-ui/icons/Cake';
 import EmailIcon from '@material-ui/icons/Email';
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const socials = [
     {
@@ -28,31 +29,35 @@ const socials = [
 ]
 
 const useStyles = makeStyles({
-    root: {
-        paddingTop: "10%",
+    headshot: {
+        width: "250px",
+        borderRadius: "50%",
     },
-    // headshot: {
-    //     width: "300px",
-    //     borderRadius: "50%",
-    // },   
-    socialButton: {
+
+    bannerButton: {
         padding: "0",
         margin: "0",
         minWidth: "0",
 
         '&:hover': {
-            color: "#fff",
-            backgroundColor: "#000",
+            // color: "#fff555",
+            borderRadius: "4px",
+            
+            backgroundColor: "#fff",
         },
     },
     socialIcon: {
         fontSize: 40,
         padding: "0.5rem",
+        paddingTop: "0.5rem",
+        paddingRight: "0.5rem",
+        paddingLeft: 0,
+        paddingBottom: "0.5rem",
         color: darkTheme.palette.primary.main,
     },
   });
 
-const Banner = () => {
+const Banner = (props) => {
     const classes = useStyles();
 
     const openInNewTab = (url) => {
@@ -60,73 +65,55 @@ const Banner = () => {
       }
 
     return (
-        // center align in mobile not wokring 
-        // {{xs: "center", md: "left"}}
-            <Box display="flex" flexDirection="column" alignItems={{xs: "center", md: "left"}}>
+        // Fix hover on linkedin icon
+        <Box className={props.className} textAlign={{ xs: "center", md: "left" }}>
+            <Grid container spacing={10} alignItems="center" justifyContent="center">
 
+                <Grid item>
+                    
                     <Typography variant="h1">
                         Vincent Good
                     </Typography>
-
                     <Typography variant="h3">
                         Industrial Enginner
                     </Typography>
+                        {socials.map((item, index) => (
+                            <Box key={index} display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
+                                {<item.icon className={classes.socialIcon}/>}
+                                <Typography variant="body1">
+                                    {item.info}
+                                </Typography>
+                            </Box>
+                        ))}
+                    
+                    <Box display="flex" alignItems="center" justifyContent={{xs: "center", md: "left"}}>
 
-                    {socials.map((item, index) => (
-                        <Box key={index} display="flex" alignItems="center">
-                            {<item.icon className={classes.socialIcon} />}
-                            <Typography variant="body1">
-                                {item.info}
+                        <IconButton className={classes.bannerButton} aria-label="test" onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")}>
+                            <LinkedInIcon className={classes.socialIcon} style={{ fontSize: 50, color: "#0a66c2", padding: 0 }}/>
+                        </IconButton>
+
+                        <Button
+                        component={Link}
+                        variant="contained"
+                        color="primary"
+                        startIcon={<GetAppIcon />}
+                        download="VincentGood_cv.pdf"
+                        href="/VincentGood_cv.pdf">
+                            <Typography variant="body1" >
+                                CV
                             </Typography>
-                        </Box>
-                    ))}
+                        </Button>
 
-                    <Button className={classes.socialButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")}>
-                        <LinkedInIcon className={classes.socialIcon} style={{ color: "#0a66c2" }}/>
-                    </Button>
+                    </Box>
 
-            </Box>
+                </Grid>
+
+                <Grid item>
+                    <img className={classes.headshot} src={Headshot} alt="headShot" />
+                </Grid>
                 
-
-            //     {/* <Box className={classes.root}>
-            //     <Grid container justifyContent="center" alignItems="center">
-
-            //         <Grid item container direction="column" xs={12} md={5}>
-
-            //             <Grid item>
-            //                 <Typography variant="h1">
-            //                     Vincent Good
-            //                 </Typography>
-            //             </Grid>
-
-            //             <Grid item>
-            //                 <Typography variant="h3">
-            //                     Industrial Enginner
-            //                 </Typography>
-            //             </Grid>
-
-            //             <Grid item align={{ xs: "center", md: "left" }}>
-            //                 {socials.map((item, index) => (
-            //                     <Grid item container key={index} alignItems="center">
-            //                         {<item.icon className={classes.socialIcon} />}
-            //                         <Typography variant="body1">
-            //                             {item.info}
-            //                         </Typography>
-            //                     </Grid>
-            //                 ))}
-            //             </Grid>
-
-            //             <Grid item>
-            //                 <Button className={classes.socialButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")}>
-            //                     <LinkedInIcon className={classes.socialIcon} style={{ color: "#0a66c2" }}/>
-            //                 </Button>
-            //             </Grid>
-
-            //         </Grid>
-
-            //     </Grid>
-            // </Container>
-            // </Box> */}
+            </Grid>
+        </Box>
     )
 }
 
