@@ -14,10 +14,11 @@ const Navbar = () => {
     const classes = useStyles();
 
     return (
-        <AppBar position="static" position="fixed">
+        // center navtabs
+        <AppBar position="fixed">
             <Toolbar>
 
-                    <Box className={classes.navTabs} justifyContent="center">
+                    <Box className={classes.navTabs} >
                         <Container style={{ marginLeft: 0 }}>
                             <Button component={Link} href="#home">
                                 <Typography variant="body1">

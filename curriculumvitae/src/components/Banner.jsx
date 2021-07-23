@@ -33,21 +33,33 @@ const useStyles = makeStyles({
         borderRadius: "50%",
     },
 
-    bannerButton: {
-        padding: "0",
-        margin: "0",
-        minWidth: "0",
+    // bannerButton: {
+    //     padding: "0",
+    //     margin: "0",
+
+    //     '&:hover': {
+    //         cursor: "pointer",
+    //         color: "#fff555",
+    //     },
+    // },
+
+    iconButton: {
+        fontSize: 50,
+        borderRadius: darkTheme.shape.borderRadius,
+        color: "#0a66c2",
+        padding: 0,
+        margin: "1rem",
+        boxShadow: darkTheme.shadows[2],
+        transition: darkTheme.transitions.easing.easeInOut,
+        transitionDuration: darkTheme.transitions.duration.short,
 
         '&:hover': {
-            // color: "#fff555",
-            borderRadius: "4px",
-            
-            backgroundColor: "#fff",
+            color: "#063D74",
         },
     },
+
     socialIcon: {
         fontSize: 40,
-        padding: "0.5rem",
         paddingTop: "0.5rem",
         paddingRight: "0.5rem",
         paddingLeft: 0,
@@ -64,7 +76,6 @@ const Banner = (props) => {
       }
 
     return (
-        // Fix hover on linkedin icon
         <Box className={props.className} textAlign={{ xs: "center", md: "left" }} id="home">
             <Grid container spacing={10} alignItems="center" justifyContent="center">
 
@@ -87,8 +98,14 @@ const Banner = (props) => {
                     
                     <Box display="flex" alignItems="center" justifyContent={{xs: "center", md: "left"}}>
 
-                        <IconButton className={classes.bannerButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")} aria-label="linkedIn">
-                            <LinkedInIcon className={classes.socialIcon} style={{ fontSize: 50, color: "#0a66c2", padding: 0 }}/>
+                        {/* <Link className={classes.bannerButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")} aria-label="linkedIn"> */}
+                            {/* <LinkedInIcon className={classes.iconButton}/> */}
+                        {/* </Link> */}
+
+                        {/* <SvgIcon className={classes.iconButton} component={ LinkedInIcon } viewBox="0 0 24 24" /> */}
+
+                        <IconButton className={classes.iconButton} component={Link} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")} aria-label="linkedIn">
+                            <LinkedInIcon style={{ fontSize: 38, width: "100%" }} viewBox="3 3 18 18"/>
                         </IconButton>
 
                         <Button
