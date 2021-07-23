@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography, makeStyles } from '@material-ui/core';
+import { Box, Container, Grid, Typography } from '@material-ui/core';
 
 const aboutTile = [
     {
@@ -16,7 +16,7 @@ const AboutMe = (props) => {
     return (
         <Box className={props.className} textAlign="justify">
             <Container >
-                <Typography variant="h2" align="center" style={{ paddingBottom: "3rem"}}>
+                <Typography variant="h2" align="center" style={{ paddingBottom: "3rem"}} id="aboutMe">
                     A little bit about me...
                 </Typography>
 

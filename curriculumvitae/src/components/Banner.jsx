@@ -1,7 +1,6 @@
-import React from 'react'
 import { darkTheme } from '../theme';
-import { Box, Grid, Typography, Button, makeStyles, IconButton, Link } from '@material-ui/core'
-import Headshot from '../assets/headshot.jpg'
+import { Box, Grid, Typography, Button, makeStyles, IconButton, Link } from '@material-ui/core';
+import Headshot from '../assets/headshot.jpg';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -66,7 +65,7 @@ const Banner = (props) => {
 
     return (
         // Fix hover on linkedin icon
-        <Box className={props.className} textAlign={{ xs: "center", md: "left" }}>
+        <Box className={props.className} textAlign={{ xs: "center", md: "left" }} id="home">
             <Grid container spacing={10} alignItems="center" justifyContent="center">
 
                 <Grid item>
@@ -88,7 +87,7 @@ const Banner = (props) => {
                     
                     <Box display="flex" alignItems="center" justifyContent={{xs: "center", md: "left"}}>
 
-                        <IconButton className={classes.bannerButton} aria-label="test" onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")}>
+                        <IconButton className={classes.bannerButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")} aria-label="linkedIn">
                             <LinkedInIcon className={classes.socialIcon} style={{ fontSize: 50, color: "#0a66c2", padding: 0 }}/>
                         </IconButton>
 
@@ -98,7 +97,8 @@ const Banner = (props) => {
                         color="primary"
                         startIcon={<GetAppIcon />}
                         download="VincentGood_cv.pdf"
-                        href="/VincentGood_cv.pdf">
+                        href="/VincentGood_cv.pdf"
+                        aria-label="cvDownload">
                             <Typography variant="body1" >
                                 CV
                             </Typography>
