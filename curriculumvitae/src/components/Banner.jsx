@@ -98,12 +98,6 @@ const Banner = (props) => {
                     
                     <Box display="flex" alignItems="center" justifyContent={{xs: "center", md: "left"}}>
 
-                        {/* <Link className={classes.bannerButton} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")} aria-label="linkedIn"> */}
-                            {/* <LinkedInIcon className={classes.iconButton}/> */}
-                        {/* </Link> */}
-
-                        {/* <SvgIcon className={classes.iconButton} component={ LinkedInIcon } viewBox="0 0 24 24" /> */}
-
                         <IconButton className={classes.iconButton} component={Link} onClick={() => openInNewTab("https://www.linkedin.com/in/vincent-good")} aria-label="linkedIn">
                             <LinkedInIcon style={{ fontSize: 38, width: "100%" }} viewBox="3 3 18 18"/>
                         </IconButton>

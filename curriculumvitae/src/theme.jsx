@@ -22,9 +22,7 @@ export const darkTheme = createTheme({
       primary: '#FFFBF5',
     },
   },
-
-  // shadows[2]: "0px 3px 1px -2px rgba(70, 84, 114, 0.2), 0px 2px 2px 0px rgba(70, 84, 114, 0.14), 0px 1px 5px 0px rgba(70, 84, 114, 0.12)",
-
+  
   typography: {
     fontSize: 10,
 
