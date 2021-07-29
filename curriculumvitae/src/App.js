@@ -6,8 +6,19 @@ import { darkTheme } from './theme';
 import Navbar from './components/Navbar';
 
 const useStyles = makeStyles({
+  root: {
+    scrollBehavior: "smooth",
+  },
+
   section: {
-    marginTop: "15%",
+    height: "100vh",
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+
+    [darkTheme.breakpoints.down('sm')]: {
+      marginTop: "10rem",
+    },
   },
 })
 
@@ -18,8 +29,8 @@ const classes = useStyles();
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Navbar/>
-      <Banner className={classes.section}/>
-      <AboutMe className={classes.section}/>
+      <Banner className={classes.section} id="home"/>
+      <AboutMe className={classes.section} id="aboutMe"/>
     </ThemeProvider>
   );
 }

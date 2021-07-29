@@ -33,16 +33,6 @@ const useStyles = makeStyles({
         borderRadius: "50%",
     },
 
-    // bannerButton: {
-    //     padding: "0",
-    //     margin: "0",
-
-    //     '&:hover': {
-    //         cursor: "pointer",
-    //         color: "#fff555",
-    //     },
-    // },
-
     iconButton: {
         fontSize: 50,
         borderRadius: darkTheme.shape.borderRadius,
@@ -53,9 +43,10 @@ const useStyles = makeStyles({
         transition: darkTheme.transitions.easing.easeInOut,
         transitionDuration: darkTheme.transitions.duration.short,
 
-        '&:hover': {
+        "&:hover": {
             color: "#063D74",
         },
+        "&:focus": darkTheme.palette.action.focus,
     },
 
     socialIcon: {
@@ -76,8 +67,8 @@ const Banner = (props) => {
       }
 
     return (
-        <Box className={props.className} textAlign={{ xs: "center", md: "left" }} id="home">
-            <Grid container spacing={10} alignItems="center" justifyContent="center">
+        <Box className={props.className} textAlign={{ xs: "center", md: "left" }} id={props.id}>
+            <Grid container spacing={10} style={{ alignItems: "center", justifyContent: "center", maxWidth: "100%" }}>
 
                 <Grid item>
                     
@@ -85,7 +76,7 @@ const Banner = (props) => {
                         Vincent Good
                     </Typography>
                     <Typography variant="h3">
-                        Industrial Enginner
+                        Industrial Engineer
                     </Typography>
                         {socials.map((item, index) => (
                             <Box key={index} display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>

@@ -5,6 +5,7 @@ export const darkTheme = createTheme({
     type: "dark",
 
     background: {
+      paper: "#272F3F",
       default: "#181D27",
     },
 
@@ -24,9 +25,15 @@ export const darkTheme = createTheme({
   },
   
   typography: {
+    fontFamily: ["Roboto Mono", "monospace", "Roboto", "sans-serif"],
     fontSize: 10,
 
+    h1: {
+      fontFamily: "Roboto",
+    },
+
     h3: {
+      fontFamily: "Roboto",
       marginBottom: "2rem",
     },
 
