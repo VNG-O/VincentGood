@@ -1,5 +1,5 @@
 import { darkTheme } from '../theme';
-import { Box, Grid, Typography, Button, makeStyles, IconButton, Link } from '@material-ui/core';
+import { Box, Grid, Typography, Button, makeStyles, IconButton, Link, createStyles } from '@material-ui/core';
 import Headshot from '../assets/headshot.jpg';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -7,25 +7,6 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import CakeIcon from '@material-ui/icons/Cake';
 import EmailIcon from '@material-ui/icons/Email';
 import GetAppIcon from '@material-ui/icons/GetApp';
-
-const socials = [
-    {
-        icon: PhoneIcon,
-        info: "(+27)79 887 2395",
-    },
-    {
-        icon: EmailIcon,
-        info: "vincent.nick.good@gmail.com",
-    },
-    {
-        icon: LocationOnIcon,
-        info: "Pretoria, South Africa",
-    },
-    {
-        icon: CakeIcon,
-        info: "16 February 1997",
-    },
-]
 
 const useStyles = makeStyles({
     headshot: {
@@ -57,6 +38,14 @@ const useStyles = makeStyles({
         paddingBottom: "0.5rem",
         color: darkTheme.palette.primary.main,
     },
+
+    email: {
+        color: darkTheme.palette.text.primary,
+
+        "&:hover": {
+            color:  darkTheme.palette.primary.main,
+        },
+    }
   });
 
 const Banner = (props) => {
@@ -78,14 +67,38 @@ const Banner = (props) => {
                     <Typography variant="h3">
                         Industrial Engineer
                     </Typography>
-                        {socials.map((item, index) => (
-                            <Box key={index} display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
-                                {<item.icon className={classes.socialIcon}/>}
-                                <Typography variant="body1">
-                                    {item.info}
-                                </Typography>
-                            </Box>
-                        ))}
+
+                        <Box display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
+                            <PhoneIcon className={classes.socialIcon} />
+                            <Typography variant="body1">
+                                (+27)79 887 2395
+                            </Typography>
+                        </Box>
+
+                        <Box display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
+                            <EmailIcon className={classes.socialIcon}/>
+                            <Typography
+                            className={classes.email}
+                            variant="body1"
+                            component={Link}
+                            href="mailto:vincent.nick.good@gmail.com">
+                                vincent.nick.good@gmail.com
+                            </Typography>
+                        </Box>
+
+                        <Box display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
+                            <LocationOnIcon className={classes.socialIcon} />
+                            <Typography variant="body1">
+                                Pretoria, South Africa
+                            </Typography>
+                        </Box>
+
+                        <Box display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
+                            <CakeIcon className={classes.socialIcon} />
+                            <Typography variant="body1">
+                                16 February 1997
+                            </Typography>
+                        </Box>
                     
                     <Box display="flex" alignItems="center" justifyContent={{xs: "center", md: "left"}}>
 

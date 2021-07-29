@@ -32,6 +32,10 @@ export const darkTheme = createTheme({
       fontFamily: "Roboto",
     },
 
+    h2: {
+      fontFamily: "Roboto",
+    },
+
     h3: {
       fontFamily: "Roboto",
       marginBottom: "2rem",

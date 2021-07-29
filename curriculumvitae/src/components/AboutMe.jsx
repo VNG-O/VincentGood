@@ -16,6 +16,7 @@ const AboutMe = (props) => {
     return (
         <Box className={props.className} textAlign="justify" id={props.id} pt="8rem">
             <Container>
+                
                 <Typography variant="h2" align="center" style={{ paddingBottom: "3rem"}}>
                     A little bit about me...
                 </Typography>

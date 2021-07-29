@@ -40,7 +40,6 @@ const Navbar = () => {
             <Box className={classes.navBox}>
                 <Toolbar>
                     
-                    {/* <Container > */}
                     <Tabs
                     value={value}
                     onChange={handleChange}
