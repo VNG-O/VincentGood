@@ -1,5 +1,6 @@
-// import Skill from "./Skill";
-import { Box, Typography, Grid, Container, List, ListItemIcon, ListItem, ListItemText } from "@material-ui/core"
+import SectionColumns from "./common/SectionColumns";
+import Card from "./common/Card";
+import { Box, Typography, Grid, Container, List, ListItemIcon, ListItem, ListItemText, makeStyles, Paper } from "@material-ui/core"
 import { darkTheme } from "../theme";
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import GroupIcon from '@material-ui/icons/Group';
@@ -9,15 +10,14 @@ import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 const skills = [
     {
         title: "Technology",
-        icon: <LaptopMacIcon style={
-                                                        {
-                                                            fontSize: "4.5rem",
-                                                            position: "absolute",
-                                                            zIndex: "1",
-                                                            top: "-15px",
-                                                            left: "0"
-                                                        }
-                                                    } />,
+        icon: <LaptopMacIcon style={{
+            fontSize: 40,
+            paddingTop: "0.5rem",
+            paddingRight: "0.5rem",
+            paddingLeft: 0,
+            paddingBottom: "0.5rem",
+            color: darkTheme.palette.primary.main,
+        }} />,
         info: [
             "Programming (Python, R)",
             "MySQL Database Service",
@@ -65,11 +65,55 @@ const skills = [
     },
 ]
 
-const Skills = (props) => {
-    return (
-        // <Box>
-        //     <Container>
+const useStyles = makeStyles({
+    socialIcon: {
+        fontSize: 40,
+        paddingTop: "0.5rem",
+        paddingRight: "0.5rem",
+        paddingLeft: 0,
+        paddingBottom: "0.5rem",
+        color: darkTheme.palette.primary.main,
+    },
+})
 
+const Skills = (props) => {
+    const classes = useStyles()
+
+    return (
+        <SectionColumns title="Skills">
+
+            {skills.map((item, index) => (
+                <Card title={item.title} md={3} key={index}>
+                    <LaptopMacIcon style={{ color: darkTheme.palette.primary.main, fontSize: "4.5rem", position: "absolute", zIndex: "1", top: "-15px", left: "0" }} />
+
+                    <List dense={true}>
+
+                    {item.info.map((skill, i) => (
+                        <ListItem key={i}>
+
+                            <ListItemIcon>
+                                <FiberManualRecordIcon />
+                            </ListItemIcon>
+
+                            <ListItemText 
+                            primary={
+                            <Typography variant="body1">
+                                {skill}
+                            </Typography>} />
+
+                        </ListItem>
+                    ))}
+
+                    </List>
+                </Card>
+            ))}
+
+        </SectionColumns>
+
+
+        // <Box className={props.className} textAlign="justify" id={props.id} pt="8rem">
+        //     <Container>
+                
         //         <Typography variant="h2" align="center" style={{ paddingBottom: "3rem"}}>
         //             Skills
         //         </Typography>
@@ -77,59 +121,52 @@ const Skills = (props) => {
         //         <Grid container justifyContent="center" spacing={10}>
 
         //             {skills.map((item, index) => (
+
         //                 <Grid item key={index} md={4}>
-        //                     <Skill skill={item}/>
+                            
+
+                            // <LaptopMacIcon style={{ color: darkTheme.palette.primary.main, fontSize: "4.5rem", position: "absolute", zIndex: "1", top: "-15px", left: "0" }} />
+
+                            // <Typography variant="h3" align="center" style={{ position: "relative" }}>
+                            //     {item.icon}
+                            //     {item.title}
+                            // </Typography>
+                            
+                            // <Box display="flex" align="center">
+                            //     {item.icon}
+                            //     <Typography variant="h3">
+                            //         {item.title}
+                            //     </Typography>
+                            // </Box>
+
+                            // <List dense={true}>
+
+                            //     {item.info.map((item, index) => (
+                            //         <ListItem key={index}>
+
+                            //             <ListItemIcon>
+                            //                 <FiberManualRecordIcon />
+                            //             </ListItemIcon>
+
+                            //             <ListItemText 
+                            //             primary={
+                            //             <Typography variant="body1">
+                            //                 {item}
+                            //             </Typography>} />
+
+                            //         </ListItem>
+                            //     ))}
+
+                            // </List>
         //                 </Grid>
+                        
+
         //             ))}
 
         //         </Grid>
 
         //     </Container>
         // </Box>
-
-        <Box className={props.className} textAlign="justify" id={props.id} pt="8rem">
-            <Container>
-                
-                <Typography variant="h2" align="center" style={{ paddingBottom: "3rem"}}>
-                    Skills
-                </Typography>
-
-                <Grid container justifyContent="center" spacing={10}>
-
-                    {skills.map((item, index) => (
-
-                        <Grid item key={index} md={4}>
-                            <Typography variant="h3" align="center">
-                                {item.title}
-                            </Typography>
-
-                            <List dense={true}>
-
-                            {item.info.map((item, index) => (
-                                <ListItem key={index}>
-
-                                    <ListItemIcon>
-                                        <FiberManualRecordIcon />
-                                    </ListItemIcon>
-
-                                    <ListItemText 
-                                    primary={
-                                    <Typography variant="body1">
-                                        {item}
-                                    </Typography>} />
-
-                    </ListItem>
-                ))}
-
-            </List>
-                        </Grid>
-
-                    ))}
-
-                </Grid>
-
-            </Container>
-        </Box>
     )
 }
 

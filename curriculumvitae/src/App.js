@@ -31,7 +31,7 @@ const classes = useStyles();
       <CssBaseline />
       <Navbar/>
       <Banner className={classes.section} id="home"/>
-      <AboutMe className={classes.section} id="aboutMe"/>
+      <AboutMe id="aboutMe"/>
       <Skills className={classes.section} />
     </ThemeProvider>
   );
