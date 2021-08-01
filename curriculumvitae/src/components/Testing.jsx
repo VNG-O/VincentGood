@@ -5,7 +5,9 @@ import MuiTooltip from '@material-ui/core/Tooltip'
 import { darkTheme } from '../theme';
 import CustomTooltip from './CustomTooltip'
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import PowerBI from '../assets/PowerBI.svg'
+import PowerBI from '../assets/PowerBi'
+import Python from '../assets/Python'
+import RLogo from '../assets/RLogo'
 
 const data = [
     {name: "python", level: 0.85},
@@ -45,9 +47,10 @@ const Testing = () => {
                     
               </MuiTooltip> */}
 
-              <SvgIcon>
-                  {PowerBI}
-              </SvgIcon>
+            <PowerBI fontSize="5rem" />
+            <Python fontSize="5rem" />
+            <RLogo fontSize="5rem" />
+
         </Box>
     )
 }
