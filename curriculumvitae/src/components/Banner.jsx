@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     headshot: {
         width: "250px",
         borderRadius: "50%",
+        boxShadow: "0 0 0 30px #000",
     },
 
     iconButton: {
@@ -61,12 +62,31 @@ const Banner = (props) => {
 
                 <Grid item>
                     
-                    <Typography variant="h1">
-                        Vincent Good
-                    </Typography>
-                    <Typography variant="h3">
-                        Industrial Engineer
-                    </Typography>
+                    <Box display="flex">
+                        <Typography variant="h1">
+                            {'<Vincent Good/>'}
+                        </Typography>
+                        {/* <Typography variant="h1">
+                            NAME
+                        </Typography>
+                        <Typography variant="h1" style={{ color: "#24C4D4" }}>
+                            {' <= '}
+                        </Typography>
+                        <Typography variant="h1">
+                            Vincent Good
+                        </Typography> */}
+                    </Box>
+                    <Box display="flex">
+                        <Typography variant="h3">
+                            POSITION
+                        </Typography>
+                        <Typography variant="h3" style={{ color: "#24C4D4" }}>
+                            {'<='} 
+                        </Typography>
+                        <Typography variant="h3">
+                            Industrial Engineer
+                        </Typography>
+                    </Box>
 
                         <Box display="flex" alignItems="center" justifyContent={{ xs: "center", md: "left" }}>
                             <PhoneIcon className={classes.socialIcon} />

@@ -10,14 +10,7 @@ import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 const skills = [
     {
         title: "Technology",
-        icon: <LaptopMacIcon style={{
-            fontSize: 40,
-            paddingTop: "0.5rem",
-            paddingRight: "0.5rem",
-            paddingLeft: 0,
-            paddingBottom: "0.5rem",
-            color: darkTheme.palette.primary.main,
-        }} />,
+        icon: <LaptopMacIcon viewBox="0 -7 24 24" style={{fontSize: "3rem" }}/>,
         info: [
             "Programming (Python, R)",
             "MySQL Database Service",
@@ -29,15 +22,7 @@ const skills = [
     },
     {
         title: "Leadership",
-        icon: <GroupIcon style={
-                                                    {
-                                                        fontSize: "4.5rem",
-                                                        position: "absolute",
-                                                        zIndex: "1",
-                                                        top: "-15px",
-                                                        left: "0"
-                                                    }
-                                                } />,
+        icon: <GroupIcon />,
         info: [
             "Managed a restaurant alone regularly, in the absence of the manager",
             "House prefect at Pretoria Boys High School",
@@ -47,15 +32,7 @@ const skills = [
     },
     {
         title: "Interests",
-        icon: <BeachAccessIcon style={
-                                                        {
-                                                            fontSize: "4.5rem",
-                                                            position: "absolute",
-                                                            zIndex: "1",
-                                                            top: "-15px",
-                                                            left: "0"
-                                                        }
-                                                    } />,
+        icon: <BeachAccessIcon />,
         info: [
             "Technology – Across the board, from computers through materials and engineering",
             "Woodworking – Have made and sold home décor items",
@@ -83,8 +60,7 @@ const Skills = (props) => {
         <SectionColumns title="Skills">
 
             {skills.map((item, index) => (
-                <Card title={item.title} md={3} key={index}>
-                    <LaptopMacIcon style={{ color: darkTheme.palette.primary.main, fontSize: "4.5rem", position: "absolute", zIndex: "1", top: "-15px", left: "0" }} />
+                <Card title={[item.icon, item.title]} md={3} key={index}>
 
                     <List dense={true}>
 
@@ -109,64 +85,6 @@ const Skills = (props) => {
             ))}
 
         </SectionColumns>
-
-
-        // <Box className={props.className} textAlign="justify" id={props.id} pt="8rem">
-        //     <Container>
-                
-        //         <Typography variant="h2" align="center" style={{ paddingBottom: "3rem"}}>
-        //             Skills
-        //         </Typography>
-
-        //         <Grid container justifyContent="center" spacing={10}>
-
-        //             {skills.map((item, index) => (
-
-        //                 <Grid item key={index} md={4}>
-                            
-
-                            // <LaptopMacIcon style={{ color: darkTheme.palette.primary.main, fontSize: "4.5rem", position: "absolute", zIndex: "1", top: "-15px", left: "0" }} />
-
-                            // <Typography variant="h3" align="center" style={{ position: "relative" }}>
-                            //     {item.icon}
-                            //     {item.title}
-                            // </Typography>
-                            
-                            // <Box display="flex" align="center">
-                            //     {item.icon}
-                            //     <Typography variant="h3">
-                            //         {item.title}
-                            //     </Typography>
-                            // </Box>
-
-                            // <List dense={true}>
-
-                            //     {item.info.map((item, index) => (
-                            //         <ListItem key={index}>
-
-                            //             <ListItemIcon>
-                            //                 <FiberManualRecordIcon />
-                            //             </ListItemIcon>
-
-                            //             <ListItemText 
-                            //             primary={
-                            //             <Typography variant="body1">
-                            //                 {item}
-                            //             </Typography>} />
-
-                            //         </ListItem>
-                            //     ))}
-
-                            // </List>
-        //                 </Grid>
-                        
-
-        //             ))}
-
-        //         </Grid>
-
-        //     </Container>
-        // </Box>
     )
 }
 

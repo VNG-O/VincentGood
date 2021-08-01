@@ -55,7 +55,7 @@ Card.defaultProps = {
     grid: true,
 }
 Card.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
     paper: PropTypes.bool,
     children: PropTypes.node,
     grid: PropTypes.bool,

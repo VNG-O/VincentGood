@@ -4,15 +4,15 @@ import { Children } from 'react';
 
 const useStyles = makeStyles({
     section: {
-    height: "100vh",
-    alignItems: "center",
-    justifyContent: "center",
-    display: "flex",
-    flexDirection: "column",
+        height: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
     },
 })
 
-const SectionColumns = ({ children, title, md, ...props }) => {
+const SectionColumns = ({ children, title, spacing, md, ...props }) => {
     const classes = useStyles()
 
     return (
@@ -23,11 +23,11 @@ const SectionColumns = ({ children, title, md, ...props }) => {
                 {title}
             </Typography> }
             
-            <Grid container justifyContent="center" spacing={10}>
+            <Grid container justifyContent="center" spacing={spacing}>
 
                 {children}
                 
-            </Grid> 
+            </Grid>
 
         </Box>
     )

@@ -5,6 +5,7 @@ import { ThemeProvider, makeStyles } from '@material-ui/core';
 import { darkTheme } from './theme';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
+import Testing from './components/Testing';
 
 const useStyles = makeStyles({
   root: {
@@ -33,6 +34,7 @@ const classes = useStyles();
       <Banner className={classes.section} id="home"/>
       <AboutMe id="aboutMe"/>
       <Skills className={classes.section} />
+      <Testing/>
     </ThemeProvider>
   );
 }

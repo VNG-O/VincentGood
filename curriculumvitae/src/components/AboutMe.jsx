@@ -17,7 +17,7 @@ const AboutMe = (props) => {
 
     return (
 
-        <SectionColumn title="A little bit about me..." textAlign="justify" style={{ padding: "3rem"}} id={props.id}>
+        <SectionColumn title="A little bit about me..." textAlign="justify" style={{ padding: "3rem"}} spacing={10} id={props.id}>
             {aboutCard.map((item, index) => (
 
                 <Card title={item.title} key={index} md={4}>
