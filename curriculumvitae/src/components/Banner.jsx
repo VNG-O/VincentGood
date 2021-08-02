@@ -66,23 +66,8 @@ const Banner = (props) => {
                         <Typography variant="h1">
                             {'<Vincent Good/>'}
                         </Typography>
-                        {/* <Typography variant="h1">
-                            NAME
-                        </Typography>
-                        <Typography variant="h1" style={{ color: "#24C4D4" }}>
-                            {' <= '}
-                        </Typography>
-                        <Typography variant="h1">
-                            Vincent Good
-                        </Typography> */}
                     </Box>
                     <Box display="flex">
-                        <Typography variant="h3">
-                            POSITION
-                        </Typography>
-                        <Typography variant="h3" style={{ color: "#24C4D4" }}>
-                            {'<='} 
-                        </Typography>
                         <Typography variant="h3">
                             Industrial Engineer
                         </Typography>
