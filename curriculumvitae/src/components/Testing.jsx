@@ -1,13 +1,11 @@
-import React from 'react'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Typography, Box, SvgIcon } from '@material-ui/core';
-import MuiTooltip from '@material-ui/core/Tooltip'
+import { Typography, Box, SvgIcon, Tooltip, Icon } from '@material-ui/core';
 import { darkTheme } from '../theme';
-import CustomTooltip from './CustomTooltip'
+import CustomTooltip from './CustomTooltip';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import PowerBI from '../assets/PowerBi'
-import Python from '../assets/Python'
-import RLogo from '../assets/RLogo'
+import PowerBI from '../assets/PowerBi';
+import Python from '../assets/Python';
+import RLogo from '../assets/RLogo';
+import Logo from '../assets/R_logo.svg'
 
 const data = [
     {name: "python", level: 0.85},
@@ -18,38 +16,46 @@ const data = [
 const Testing = () => {
 
     return (
-        <Box display="flex">
-            <BarChart
-              width={500}
-              height={300}
-              data={data}
-              layout="vertical"
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <XAxis type="number" tick={null} label={null}/>
-              <YAxis type="category"
-              dataKey="name" />
-              <Tooltip content={<CustomTooltip />} cursor={{ fill: "none" }}/>
-              <Legend />
-              <Bar dataKey="level" fill={darkTheme.palette.secondary.main} />
-            </BarChart>
+        <Box display="flex" justifyContent="center" pb='10rem'>
 
-              {/* <MuiTooltip title={
+              {/* <Tooltip title={
                   <Typography variant="body1" >
                       Python
                   </Typography>
               } >
                     
-              </MuiTooltip> */}
+              </Tooltip> */}
 
-            <PowerBI fontSize="5rem" />
-            <Python fontSize="5rem" />
-            <RLogo fontSize="5rem" />
+            <Box padding="1rem">
+              <Tooltip title="teseting">
+                {/* <PowerBI fontSize="5rem" /> */}
+                <Typography variant="body1">this is a div</Typography>
+              </Tooltip>
+            </Box>
+
+            <Box padding="1rem">
+              <Tooltip title={
+                    <Typography variant="body1" >
+                        Python
+                    </Typography>
+                }>
+                <Python fontSize="5rem" />
+              </Tooltip>
+            </Box>
+
+            <Box padding="1rem">
+              <Tooltip title={
+                    <Typography variant="body1" >
+                        Python
+                    </Typography>
+                }>
+                <RLogo fontSize="5rem"/>
+              </Tooltip>
+            </Box>
+
+            <Icon>
+              <img src="../assets/R_logo.svg" />
+            </Icon>
 
         </Box>
     )
